@@ -131,23 +131,89 @@ console.log(
 console.log(`String with
   multiple
   lines`);
+  
+  const age = 15;
+  
+  if (age >= 18) {
+    console.log("Sarah can start driving license 🚗");
+  } else {
+    const yearsLeft = 18 - age;
+    console.log(`Sarah is too young. Wait another ${yearsLeft} years :)`);
+  }
+  
+  const birthYear = 2012;
+  
+  let century;
+  if (birthYear <= 2000) {
+    century = 20;
+  } else {
+    century = 21;
+  }
+  console.log(century);
+
+// type conversion
+const inputYear = "1991";
+console.log(Number(inputYear), inputYear);
+console.log(Number(inputYear) + 18);
+
+console.log(Number("Jonas"));
+console.log(typeof NaN);
+
+console.log(String(23), 23);
+
+// type coercion
+console.log("I am " + 23 + " years old");
+console.log("I am " + "23" + " years old");
+console.log("23" - "10" - 3); // 10
+console.log("23" + "10" + 3); // 23103
+console.log("23" * 2); // 46
+console.log("23" / 2); // 11.5
+
+let n = "1" + 1;
+n = n - 1;
+console.log(n);
+
+
+// 5 falsy values: 0, '', undefined, null, NaN Xx: if they are converted to booleans, they will become false; everything else is truthy values, will become true if converted to booleans
+
+console.log(Boolean(0));
+console.log(Boolean(undefined));
+console.log(Boolean("Jonas"));
+console.log(Boolean({}));
+console.log(Boolean(""));
+
+const money = 100;
+if (money) {
+  console.log("Dont spend it all ;)");
+} else {
+  console.log("You should get a job!");
+}
+
+let height = 0;
+if (height) {
+  console.log("YAY! Height is defined!");
+} else {
+  console.log("Height is UNDEFINED");
+}
 */
 
-const age = 15;
+const age = "18";
+if (age === 18) console.log("You just became an adult :D (strict)");
+// console.log("18" == 18); // Xx: True, == allows type conversion, === is strict and does not allow
+if (age == 18) console.log("You just became an adult :D (loose)");
 
-if (age >= 18) {
-  console.log("Sarah can start driving license 🚗");
+const favorite = Number(prompt("What's your favorite number?"));
+console.log(favorite);
+console.log(typeof favorite);
+
+if (favorite === 23) {
+  console.log("Cool! 23 is an amazing number!");
+} else if (favorite === 7) {
+  console.log("7 is also a cool number");
+} else if (favorite === 9) {
+  console.log("9 is also a cool number");
 } else {
-  const yearsLeft = 18 - age;
-  console.log(`Sarah is too young. Wait another ${yearsLeft} years :)`);
+  console.log(`${favorite} is not a cool number`);
 }
 
-const birthYear = 2012;
-
-let century;
-if (birthYear <= 2000) {
-  century = 20;
-} else {
-  century = 21;
-}
-console.log(century);
+if (favorite !== 23) console.log("Why not 23?");
